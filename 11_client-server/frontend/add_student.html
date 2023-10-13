@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавить студента</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script alt="" src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="form" id="form" action="" autocomplete="off">
+      <div class="h1-form">
+        <h1 class="h1">Добавить студента</h1>
+      </div>
+      <div class="form-input-box">
+        <label class="form-label ">Имя</label>
+        <input class="form-input form-control" id="name" type="text" placeholder="Евгений" name="name"
+          autocomplete="off">
+      </div>
+
+      <div class="form-input-box">
+        <label class="form-label">Фамилия</label>
+        <input class="form-input form-control" id="surename" type="text" placeholder="Ботнарь" name="name"
+          autocomplete="off">
+      </div>
+
+      <div class="form-input-box">
+        <label class="form-label">Отчество</label>
+        <input class="form-input form-control" id="middlname" type="text" placeholder="Викторович" name="name"
+          autocomplete="off">
+      </div>
+
+      <div class="form-input-box">
+        <label class="form-label">Дата рождения</label>
+        <input class="form-input form-control" id="birthdate" type="date" name="date" autocomplete="off">
+      </div>
+
+      <div class="form-input-box">
+        <label class="form-label">Год начала обучения</label>
+        <input class="form-input form-control" id="years-start-study" type="date" name="date" autocomplete="off">
+      </div>
+
+      <div class="form-input-box">
+        <label class="form-label">Факультет</label>
+        <select class="form-input form-control" id="faculty">
+          <option value="0">Прикладная математика и информатика</option>
+          <option value="1">Информатика и вычислительная техника</option>
+          <option value="2">Информационные системы и технологии</option>
+          <option value="3">Прикладная информатика</option>
+          <option value="4">Программная инженерия</option>
+          <option value="5">Информационная безопасность</option>
+        </select>
+      </div>
+
+      <button id="submit-btn" class="form-btn" type="submit">Отправить</button>
+    </form>
+
+    <div class="mb-5">
+      <h2 class="h2">Проверить студента</h2>
+      <div>
+        <form id="search-form" class="row gy-2 gx-3 align-items-center search">
+          <div class="col-auto col-md-6">
+            <input type="text" class="form-control" placeholder="ФИО" id="search-fio">
+          </div>
+          <div class="col-auto col-md-6">
+            <input type="text" class="form-control" placeholder="Факультет" id="search-faculty">
+          </div>
+          <div class="col-auto col-md-6">
+            <input type="text" class="form-control" placeholder="Год начала обучения" id="search-year-of-admission">
+          </div>
+          <div class="col-auto col-md-6">
+            <input type="text" class="form-control" placeholder="Год окончания обучения" id="search-year-of-graduation">
+          </div>
+          <div>
+            <button type="submit" class="form-btn-2">Поиск</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <h2 class="h2">Список студентов</h2>
+    <div class="blok">
+      <table class="table table-bordered" id="sortable">
+        <thead>
+          <tr class="col">
+            <th id="student-name" scope="col" data-name="fio">ФИО </th>
+            <th id="student-facultet" scope="col" data-name="faculty">Факультет</th>
+            <th id="student-birthdate" scope="col" data-name="age">Дата рождения и возраст</th>
+            <th id="student-years" scope="col" data-name="year of study">Годы обучения и номер курса </th>
+          </tr>
+        </thead>
+        <tbody id="student-upload">
+          <!-- Здесь будут отображаться данные из Local Storage иле с сервера -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script defer type="module" alt="" src="./main.js"></script>
+</body>
+
+</html>
